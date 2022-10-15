@@ -1,6 +1,7 @@
 import './css/styles.css';
 import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix';
+import { fetchCountries } from './api.js';
 
 const DEBOUNCE_DELAY = 300;
 
@@ -59,17 +60,6 @@ function createMarkupForCountries(country) {
   <h2><img src="${country.flags.svg}" alt="${country.name.official}" width="50px" height="30px"><span class="country-name">${country.name.official}</span></h2>
 </li>`;
   list.insertAdjacentHTML('beforeend', markupSecond);
-}
-
-function fetchCountries(name) {
-  return fetch(
-    `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
-  ).then(resp => {
-    if (!resp.ok) {
-      throw new Error(resp.status);
-    }
-    return resp.json();
-  });
 }
 
 function resetMarkup() {

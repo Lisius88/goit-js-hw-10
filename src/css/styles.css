@@ -10,9 +10,9 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
-  background-image: url('https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg');
+  background-image: url('https://images.pexels.com/photos/917494/pexels-photo-917494.jpeg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100vw, 100vh;
 }
 
 #search-box {
